@@ -1,10 +1,62 @@
 <html>
   <head>
+
     <title>Video Streaming Demonstration</title>
+
+    <style>
+      body {
+        justify-items: center;
+  align-content: center;
+  background-color: #000;
+
+}
+
+  #displaycont{
+
+    background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 600px;
+  padding: 20px;
+  width: 700px;
+  }
+      #loginbtn{
+background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: black;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 5px;
+  outline: 0;
+  text-align: center;
+  width: 100%;
+        }
+      #loginbtn:hover{
+      text-shadow: 0 0 2em rgba(255,255,255,1);
+      color:#FFFFFF;
+      border-color:#FFFFFF;
+      }
+    </style>
+
   </head>
   <body>
-    <h1>Video Streaming Demonstration</h1>
-    <img id="bg" src="{{ url_for('video_feed') }}">
+  <div class="contentcontainer" align="center">
+    <div id="title" style="font-size: 36px;color: #FFFFFF">Video Streaming Demonstration</div>
+    <div id="displaycont" align="center">
+    <div>
+    <img id="bg"  src="{{ url_for('video_feed') }}">
+    </div>
+    <div style="font-size:1.5em" >
 
+      <a href=login >
+        <button id="loginbtn" >Login</button>
+      </a>
+
+    </div>
+    </div>
+  </div>
   </body>
 </html>

@@ -56,9 +56,9 @@ cap = cv2.VideoCapture(0)
 
 while True:
     success, img = cap.read()
-    # cv2.imshow('ms',img)
+    # cv2.imshow('ms',static)
     img1 = img
-# img = captureScreen()
+# static = captureScreen()
     imgS = cv2.resize(img, (0, 0), None, 0.25, 0.25)
     imgS = cv2.cvtColor(imgS, cv2.COLOR_BGR2RGB)
 
@@ -75,24 +75,24 @@ while True:
             name = classNames[matchIndex].upper()
             print(name)
             # markAttendance(name)
-            # cv2.imshow('Face Recognition', img)
+            # cv2.imshow('Face Recognition', static)
             # cv2.waitKey(1)
             y1, x2, y2, x1 = faceLoc
             y1, x2, y2, x1 = y1 * 4, x2 * 4, y2 * 4, x1 * 4
             cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
             cv2.rectangle(img, (x1, y2 - 5), (x2, y2), (0, 255, 0), cv2.FILLED)
             cv2.putText(img, name, (x1 + 6, y2 - 6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)
-            # cv2.imshow('cam', img)
+            # cv2.imshow('cam', static)
             # if cv2.waitKey(1)==13:
             #     break
 
         # else:
         #     y1, x2, y2, x1 = faceLoc
         #     y1, x2, y2, x1 = y1 * 4, x2 * 4, y2 * 4, x1 * 4
-        #     cv2.rectangle(img, (x1, y1), (x2, y2), (0, 255, 0), 2)
-        #     cv2.rectangle(img, (x1, y2 - 35), (x2, y2), (0, 255, 0), cv2.FILLED)
-        #     cv2.putText(img, "NOT RECOGNIZED", (x1 + 6, y2 - 6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)
-            # cv2.imshow('cam', img)
+        #     cv2.rectangle(static, (x1, y1), (x2, y2), (0, 255, 0), 2)
+        #     cv2.rectangle(static, (x1, y2 - 35), (x2, y2), (0, 255, 0), cv2.FILLED)
+        #     cv2.putText(static, "NOT RECOGNIZED", (x1 + 6, y2 - 6), cv2.FONT_HERSHEY_COMPLEX, 1, (255, 255, 255), 2)
+            # cv2.imshow('cam', static)
             # if cv2.waitKey(1)==13:
             #     break
 
